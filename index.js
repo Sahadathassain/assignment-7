@@ -107,10 +107,11 @@ document.querySelector("#submit").addEventListener("click", () => {
     grade.status = "Poor";
     grade.color = "text-red-600";
   }
-
+  console.log( typeof localStorage.results);
   // data setting on local storage and getting data from local storage
-  let storage = JSON.parse(localStorage.getItem("result"));
+  let storage = JSON.parse(localStorage.getItem("results"));
   if (storage) {
+    
     localStorage.setItem(
       "results",
       JSON.stringify([
@@ -126,6 +127,7 @@ document.querySelector("#submit").addEventListener("click", () => {
     localStorage.setItem(
       "results",
       JSON.stringify([
+      
         {
           marks: totalMark,
           examTime: timeTaken.innerText,
